@@ -1,0 +1,27 @@
+INDEX VERSION 1.134+C:\Users\user\Desktop\Java testing\Spring Tutorial\mylessons\.metadata\.plugins\org.eclipse.jdt.core
+1829784616.index
+3953809652.index
+3258749679.index
+761547238.index
+730504571.index
+2666567179.index
+1065579752.index
+1899953381.index
+678126834.index
+995979018.index
+396322089.index
+907479176.index
+33467318.index
+3684254619.index
+2721702922.index
+2448861552.index
+910544968.index
+1514169189.index
+1865797976.index
+2176540127.index
+826355274.index
+1520173779.index
+3944557030.index
+4221254497.index
+2058902361.index
+2832015255.index

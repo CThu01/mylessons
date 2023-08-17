@@ -1,0 +1,5 @@
+package com.jdc.cthu.entity;
+
+public class Address {
+
+}
