@@ -1,0 +1,21 @@
+package com.jdc.mkt.repo;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
+import com.jdc.mkt.entity.Customer;
+
+@Repository
+public class CustomerRepo {
+
+	@PersistenceContext
+	private EntityManager em;
+	
+	public void create(Customer cu) {
+		em.getTransaction().begin();
+		em.persist(cu);
+		em.getTransaction().commit();
+	}
+}

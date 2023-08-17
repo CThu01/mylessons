@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;09-spring-orm-mkt/src/main/resources/NETA-INF&apos; to &apos;META-INF&apos;" description="Rename resource &apos;NETA-INF&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/NETA-INF" name="META-INF" stamp="1691222779171" updateReferences="true"/>
+</session>

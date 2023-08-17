@@ -1,0 +1,9 @@
+package com.jdc.mkt.entity;
+
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class ProductPk {
+
+	private String 
+}

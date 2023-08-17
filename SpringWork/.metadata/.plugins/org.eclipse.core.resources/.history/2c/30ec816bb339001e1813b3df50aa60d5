@@ -1,0 +1,11 @@
+package com.jdc.mkt.entity;
+
+import java.io.Serializable;
+
+public class SaleDetails implements Serializable{
+	
+	private int id;
+	private Sale sale;
+	private Product product;
+	private int qty;
+}

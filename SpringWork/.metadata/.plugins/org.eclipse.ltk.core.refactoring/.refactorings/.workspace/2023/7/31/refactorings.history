@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;08-spring-jdbc&apos; to &apos;08-spring-jdbc-mkt&apos;" description="Rename resource &apos;08-spring-jdbc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/08-spring-jdbc" name="08-spring-jdbc-mkt" stamp="1690705677685" updateReferences="true"/>
+</session>

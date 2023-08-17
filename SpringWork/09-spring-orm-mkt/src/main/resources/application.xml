@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://springframework.org/schema/jdbc"
+	xmlns:jpa="http://springframework.org/schema/data/jpa"
+	xmlns:p="http://springframework.org/schema/p"
+	xmlns:tx="http://springframework.org/schema/tx"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://springframework.org/schema/jdbc https://springframework.org/schema/jdbc/spring-jdbc.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://springframework.org/schema/tx http://springframework.org/schema/tx/spring-tx.xsd
+        http://springframework.org/schema/data/jpa http://springframework.org/schema/data/jpa/spring-jpa.xsd">
+        
+        <jdbc:embedded-database id="dataSource" type="H2"></jdbc:embedded-database>
+        
+        <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+        	p:dataSource-ref="dataSource"
+        	p:persistenceProviderClass="org.hibernate.jpa.HibernatePersistenceProvider"
+        ></bean>
+        
+        
+        <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager"></bean>
+        
+        <tx:annotation-driven transaction-manager="txManager"></tx:annotation-driven>
+        
+        
+</beans>

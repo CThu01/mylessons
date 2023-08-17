@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+	<!-- <context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.jdc.hello.beans" /> -->
+	
+    <!-- bean definitions here -->
+	<!-- <bean class="com.jdc.hello.Employee"></bean> -->
+	
+	<!-- <bean class = "com.jdc.hello.beans.Employee">
+		<property name="name" value="Tut Pi"></property>
+		<property name="email" value="idiot@gmail.com"></property>
+		
+		<constructor-arg name="name" value="Tut pi"></constructor-arg>
+		<constructor-arg name="emaul" value="idiot@gamil.com"></constructor-arg>
+	</bean> -->
+	
+	<!-- static Factory Method -->
+	<!-- <bean id="empfactory" class="com.jdc.hello.beans.EmployeeStaticFactory" factory-method="withNameEmail">
+		<constructor-arg name="name" value="Tut Pi"></constructor-arg>
+		<constructor-arg name="email" value="idiot@gmail.com"></constructor-arg>
+	</bean> -->
+	
+	
+	<!-- instance Factory Method -->
+	<bean class="com.jdc.hello.beans.Employee" factory-bean="instanceFactory"></bean>
+	
+	<bean id = "instanceFactory" class="com.jdc.hello.beans.EmployeeInstanceFactory">
+		<constructor-arg name="email" value="jdc@gmail.com"></constructor-arg>
+	</bean>
+	
+	
+	
+	
+	<bean class="java.lang.String" >
+		<constructor-arg name="original" value="String Bean"></constructor-arg>
+	</bean>
+	
+	
+	
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+

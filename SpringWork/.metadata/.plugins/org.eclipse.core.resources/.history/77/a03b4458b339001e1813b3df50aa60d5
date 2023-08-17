@@ -1,0 +1,9 @@
+package com.jdc.mkt.entity;
+
+public class SaleDetails {
+	
+	private int id;
+	private Sale sale;
+	private Product product;
+	private 
+}

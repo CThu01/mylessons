@@ -1,0 +1,9 @@
+package com.jdc.mkt.entity;
+
+public class Address {
+
+	private int id;
+	private String street;
+	private String township;
+	private String city;
+}

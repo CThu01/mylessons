@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+        <!-- Bean Definitions Here -->
+	
+	<!-- <bean id="client" class="com.jdc.di.beans.MyClient" autowire="constructor" >
+		<constructor-arg ref="service"></constructor-arg>
+		
+		<property name="customService" ref="service">
+			<bean id="customService" class="com.jdc.di.beans.MyCustomService"></bean>
+		</property>
+		
+	</bean> -->
+	
+	<bean id="client" class="com.jdc.di.beans.MyClient" autowire="constructor" ></bean>
+	
+	<bean id="customService" class="com.jdc.di.beans.MyCustomService" primary="true"></bean>
+	
+	<bean id="defaultService" class="com.jdc.di.beans.MyDefaultService"></bean>
+	
+	
+</beans>

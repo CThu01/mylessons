@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;07-spring-jdbc-mkt/src/main/resources/ddlPerson.properties&apos; to &apos;dmlPerson.properties&apos;" description="Rename resource &apos;ddlPerson.properties&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/ddlPerson.properties" name="dmlPerson.properties" stamp="1690700509917" updateReferences="true"/>
+</session>

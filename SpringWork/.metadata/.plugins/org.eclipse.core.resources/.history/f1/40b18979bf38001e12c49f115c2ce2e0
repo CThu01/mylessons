@@ -1,0 +1,12 @@
+package com.jdc.mkt.test;
+
+import javax.persistence.EntityManagerFactory;
+
+public class MemberTest {
+
+	private EntityManagerFactory emf;
+	
+	static void init() {
+		
+	}
+}

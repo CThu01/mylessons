@@ -1,0 +1,21 @@
+package com.jdc.mkt.config;
+
+import org.hibernate.jpa.HibernatePersistenceProvider;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
+
+
+@Configuration
+@ComponentScan
+public class ApplicationConfig {
+
+	@Bean
+	LocalEntityManagerFactoryBean entityMangerFactory() {
+		
+		var emf = new LocalEntityManagerFactoryBean();
+		emf.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+		return emf;
+	}
+}

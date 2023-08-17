@@ -1,0 +1,10 @@
+package com.jdc.mkt.repo;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+public class CategoryRepo {
+
+	@PersistenceContext
+	private EntityManager emf;
+}

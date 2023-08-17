@@ -1,0 +1,14 @@
+package com.jdc.mkt.entity;
+
+import java.io.Serializable;
+
+public class SaleDetails implements Serializable{
+	
+	
+	private static final long serialVersionUID = 1L;
+	
+	private int id;
+	private Sale sale;
+	private Product product;
+	private int qty;
+}

@@ -1,0 +1,16 @@
+package com.jdc.mkt.test;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jdc.mkt.repo.CategoryRepo;
+
+public class CategoryTest {
+
+	@Autowired
+	private CategoryRepo categoryRepo;
+	
+	
+	void init() {
+		
+	}
+}

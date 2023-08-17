@@ -1,0 +1,13 @@
+package com.jdc.mkt.test;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class MemberTest {
+
+	private EntityManagerFactory emf;
+	
+	static void init() {
+		emf = Persistence.createEntityManagerFactory("SPRING-DATA");
+	}
+}

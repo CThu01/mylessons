@@ -1,0 +1,8 @@
+package com.jdc.mkt.entity;
+
+public class Delivery {
+
+	private int id;
+	private String name;
+	
+}

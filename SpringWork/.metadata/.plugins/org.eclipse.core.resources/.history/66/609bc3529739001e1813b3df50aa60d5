@@ -1,0 +1,13 @@
+package com.jdc.mkt.config;
+
+import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
+
+public class ApplicationConfig {
+
+	LocalEntityManagerFactoryBean entityMangerFactory() {
+		
+		var emf = new LocalEntityManagerFactoryBean();
+		
+		return emf;
+	}
+}

@@ -1,0 +1,3 @@
+INDEX VERSION 1.134
+file:/C:/Users/user/Desktop/Java%20testing/Spring%20Tutorial/SpringWork/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
+meta_index

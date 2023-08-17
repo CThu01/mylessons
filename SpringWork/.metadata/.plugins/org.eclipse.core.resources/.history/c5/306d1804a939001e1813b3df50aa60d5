@@ -1,0 +1,27 @@
+package com.jdc.mkt.entity;
+
+import java.io.Serializable;
+import java.util.Map;
+
+import javax.persistence.ElementCollection;
+import javax.persistence.EnumType;
+import javax.persistence.MapKeyEnumerated;
+
+public class Product implements Serializable{
+
+	
+	private static final long serialVersionUID = 1L;
+	
+	private int id;
+	private String name;
+	
+	@MapKeyEnumerated(EnumType.STRING)
+	@ElementCollection
+	private Map<Price, Integer> price;
+	
+	public enum Price {
+		RETAIL,WHOLESALE;
+	}
+	
+
+}

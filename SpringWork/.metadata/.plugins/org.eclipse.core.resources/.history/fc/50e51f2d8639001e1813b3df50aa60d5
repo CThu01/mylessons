@@ -1,0 +1,152 @@
+package com.jdc.mkt.entity;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.Lob;
+import javax.persistence.MapKeyColumn;
+import javax.persistence.MapKeyEnumerated;
+import javax.persistence.OrderBy;
+import javax.persistence.SecondaryTable;
+import javax.persistence.SecondaryTables;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+import static javax.persistence.TemporalType.DATE;
+import javax.persistence.TableGenerator;
+import javax.persistence.Enumerated;
+import static javax.persistence.EnumType.ORDINAL;
+import static javax.persistence.EnumType.STRING;
+import static javax.persistence.GenerationType.AUTO;
+import static javax.persistence.GenerationType.IDENTITY;
+import javax.persistence.CollectionTable;
+import javax.persistence.JoinColumn;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@Table(name="member_tbl")
+@SecondaryTables(
+		{
+			@SecondaryTable(name = "login_info",
+						indexes = {@Index(columnList = "email")},
+						uniqueConstraints = {
+								@UniqueConstraint(columnNames = "loginId")
+						}
+					),
+			@SecondaryTable(name = "address_tbl")
+		}
+)
+public class Member implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+	private int id;
+	@Basic(optional = false)
+	@Column(name = "member_name",nullable = false, length=30,unique = true)
+	private String name;
+	@Temporal(TemporalType.DATE)
+	private Date dob;
+	
+	@Enumerated(STRING)
+	private Role role;
+	
+	@Column(table = "login_info")
+	private String loginID;
+	@Column(table = "login_info")
+	private String password;
+	@Column(table = "login_info")
+	
+	private String email;
+	
+	@Column(table = "address_tbl")
+	private String street;
+	@Column(table = "address_tbl")
+	private String township;
+	@Column(table = "address_tbl")
+	private String city;
+	
+	
+	// Collection Mapping
+	@ElementCollection
+	@CollectionTable(
+			name = "member_info_tbl", 
+			joinColumns = @JoinColumn(name = "member_id", referencedColumnName = "id")
+		)
+	@MapKeyEnumerated(STRING)
+	@Enumerated(STRING)
+	private List<Role> infos;
+	
+	@ElementCollection
+	@CollectionTable(
+			name = "member_hobies_tlb", 
+			joinColumns = @JoinColumn(name = "member_id", referencedColumnName = "id")
+		)
+	@OrderBy("desc")
+	private Set<String> hobbies;
+	
+	
+	@MapKeyColumn(name = "member_maps_key")
+	@MapKeyEnumerated(STRING)
+	@ElementCollection
+	@CollectionTable(
+			name = "member_maps_tbl",
+			joinColumns = @JoinColumn(name="member_id")
+		)
+	private Map<Role, String> maps;
+	
+	
+	
+	// Collection in Collection with @Embeddable
+	@ElementCollection
+	private List<MemberPk> memberIds;
+	
+	
+	
+	@Transient
+	private boolean isDeleted;
+	
+	@Lob
+	private String image;
+	
+	public enum Role{
+		ADMIN,CUSTOMER;
+	}
+
+	public Member(String name, Date dob, String loginID, String password, String email) {
+		super();
+//		this.id = id;
+		this.name = name;
+		this.dob = dob;
+		this.loginID = loginID;
+		this.password = password;
+		this.email = email;
+	}
+
+}
+
+
+
+
